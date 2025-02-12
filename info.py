@@ -18,7 +18,7 @@ def csv_database(question):
         pages.extend(loader.load())
 
     vector_store = InMemoryVectorStore.from_documents(pages, OpenAIEmbeddings())
-    documents = vector_store.similarity_search(question, 3)
+    documents = vector_store.similarity_search(question, 1)
 
     return " ".join([doc.page_content for doc in documents])
 
