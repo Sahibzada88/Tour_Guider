@@ -9,7 +9,7 @@ from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_openai import OpenAIEmbeddings
 
 def csv_database(question):
-    file_path = "files/csv/"
+    file_path = "/"
     pdf_files = [os.path.join(file_path,f) for f in os.listdir(file_path) if f.endswith('.csv')]
 
     pages = []
