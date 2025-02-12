@@ -37,7 +37,7 @@ def chatbot(question):
     if response.tool_calls:
         for tool_call in response.tool_calls:
             if tool_call["name"] == "csv_db":
-                pdf_data = csv_db.invoke(tool_call["args"]["question"])
+                pdf_data = csv_db(tool_call["args"]["question"])
                 messages.append(ToolMessage(pdf_data,tool_call_id = tool_call["id"] ))
                 
         response = model.invoke(messages)
